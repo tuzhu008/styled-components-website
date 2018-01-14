@@ -1,35 +1,33 @@
 import md from 'components/md'
 
 const TaggedTemplateLiterals = () => md`
-  ## Tagged Template Literals
+  ## 标签模板字符串
 
-  Tagged Template Literals are a new feature in ES6. They let you define custom string interpolation rules,
-  which is how we're able to create styled components.
+  标签模板字符串（Tagged Template Literals）是 ES6 中的一个新特性。
+  它让你定义一个自定义的字符串插值规则，这就是我们如何创建样式化组件的方法。
 
-  If you pass no interpolations, the first argument your function receives is an array with a string in it.
+  如果不进行插值，函数接收的第一个参数就是一个带有字符串的数组。
 
   \`\`\`jsx
-  // These are equivalent:
+  // 它们是等价的:
   fn\`some string here\`;
   fn([ 'some string here' ]);
   \`\`\`
 
-  Once you pass interpolations, the array contains the passed string, split at the positions of the interpolations.
-  The rest of the arguments will be the interpolations, in order.
+  一旦你传入了插值，该数组包含传入的字符串，在插值的位置上进行分割。
+  其余的参数都是插值，按顺序。
 
   \`\`\`jsx
   const aVar = 'good';
 
-  // These are equivalent:
+  // 它们是等价的：
   fn\`this is a \${aVar} day\`;
   fn([ 'this is a ', ' day' ], aVar);
   \`\`\`
 
-  This is a bit cumbersome to work with, but it means that we can receive variables, functions, or mixins
-  (\`css\` helper) in styled components and can flatten that into pure CSS.
+  这有点麻烦，但这意味着我们可以在样式化组件中接收变量、函数或mixin(\`css\` 助手)，并将其转换为纯 css。
 
-  If you want to learn more about tagged template literals, check out Max Stoiber's article:
-  [The magic behind 💅 styled-components](https://mxstbr.blog/2016/11/styled-components-magic-explained/)
+  如果你像了解更多关于标记木板字符串，请查看 Max Stoiber 的文章：[The magic behind 💅 styled-components](https://mxstbr.blog/2016/11/styled-components-magic-explained/)
 `
 
 export default TaggedTemplateLiterals

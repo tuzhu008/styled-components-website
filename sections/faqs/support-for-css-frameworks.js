@@ -1,12 +1,12 @@
 import md from 'components/md'
 
 const CSSFrameworks = () => md`
-  ## Can I use CSS frameworks?
+  ## 可以使用 CSS 框架吗?
 
-  Integrating an existing CSS framework with styled-components is really easy! You can use its existing class names alongside your components.
+  将现有的 CSS 框架与样式化组件集成在一起是非常容易的！您可以在组件旁边使用它现有的类名。
 
-  Consider you have an existing app with some CSS that have the classes: \`.small\` and \`.big\`.
-  Try to swap out the \`.small\` class with \`.big\` in the example below:
+  假设您有一个现有的应用程序，其中有一些 CSS，其中有类:。 \`.small\` 和 \`.big\`。
+  在下面的例子中，试着使用 \`.big\` 交换 \`.small\`:
 
   \`\`\`react
   const Button = styled.button.attrs({
@@ -29,8 +29,7 @@ const CSSFrameworks = () => md`
   );
   \`\`\`
 
-  Please do read about [the attrs method](/docs/api#attrs) to learn how arbitary props can be passed
-  down to a styled component without wrapping it.
+  请阅读 [attrs 方法](/docs/api#attrs) 来学习如何将任意的属性传递给一个样式化组件，而不需要包装它。
 `
 
 export default CSSFrameworks

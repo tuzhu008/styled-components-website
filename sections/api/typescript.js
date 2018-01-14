@@ -3,16 +3,15 @@ import md from 'components/md'
 const TypeScript = () => md`
   ## TypeScript
 
-  styled-components has TypeScript definitions to allow the library to be used in any TypeScript project.
-  A basic example can be found [here](https://github.com/patrick91/Styled-Components-Typescript-Example).
+  样式化组件有 TypeScript 的定义，允许在任何 TypeScript 项目中使用这个库。
+  [这里](https://github.com/patrick91/Styled-Components-Typescript-Example)可以找到一个基本的例子。
 
-  ### Define a theme interface
+  ### 定义主题接口
 
-  By default every styled component will have the \`theme\` prop set to \`any\`.
-  When building complex apps it would be better to have autocomplete and error checks everywhere.
+  默认情况下，每一个样式化组件将有一个设置为  \`any\` 的 \`theme\`。
+  在构建复杂的应用程序时，最好在所有地方都有自动完成和错误检查。
 
-  To have autocomplete and checks around the \`theme\` prop we should first define the theme
-  interface we would like to use throughout our app:
+  为了完成对 \`theme\` 属性的自动完成和检查，我们首先要定义我们想要在整个应用程序中使用的主题接口:
 
   \`\`\`jsx
   // theme.ts
@@ -22,7 +21,7 @@ const TypeScript = () => md`
   }
   \`\`\`
 
-  Then we can re-export the \`styled\` function with our custom theme interface:
+  然后我们可以重新导出带有我们自定的注意接口的 \`styled\` 函数：
 
   \`\`\`jsx
   // styled-components.ts
@@ -43,13 +42,11 @@ const TypeScript = () => md`
   export default styled;
   \`\`\`
 
-  Finally, instead of importing the styled functions from the styled-components module,
-  we import it from our above, custom module.
+  最后，不是从 styled-components 模块导入 styled 函数，而是从上面的自定义模块导入。
 
   ### Caveat with \`className\`
 
-  When defining a component you will need to mark \`className\` as optional
-  in your Props interface:
+  在定义组件时，您需要在您的 Props 接口中 中标记 \`className\` 为可选的:
 
   \`\`\`jsx
   interface LogoProps {
@@ -76,8 +73,7 @@ const TypeScript = () => md`
 
   ### Caveat with Stateless Components
 
-  To use stateless components and have typechecking for the props you'll need to define
-  the component alongside with its type, like this:
+  要使用无状态组件，并对这些属性进行类型检查，您需要使用它的类型来定义组件，如下:
 
   \`\`\`jsx
   interface BoxProps {

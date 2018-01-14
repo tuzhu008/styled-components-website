@@ -7,26 +7,26 @@ import Table, { Row, Column } from 'components/Table'
 const CSS = () => md`
   ### \`css\` | web | native
 
-  A helper function to generate CSS from a template literal with interpolations. You need to use this if you return a
-  template literal with interpolations inside an interpolation. (This is due to how tagged template literals work)
+  一个辅助函数，用来从使用插值的模板字符串生成 CSS。
+  如果你在插值中返回一个模板字符串，你需要使用它。
+  (这是由于模板字符串的工作模式)
 
-  If you're just returning a normal string you do not need to use this.
+  如果你只返回一个普通的字符串，你不需要使用它。
 
   ${
-    <Table head={[ 'Arguments', 'Description' ]}>
+    <Table head={[ '参数', '描述' ]}>
       <Row>
         <Column>
           1. <Code>TaggedTemplateLiteral</Code>
         </Column>
         <Column>
-          A tagged template literal with your CSS and interpolations.
+          一个带有 CSS 和插值的标签模板字符串。
         </Column>
       </Row>
     </Table>
   }
 
-  Returns an array of interpolations, which is a flattened data structure that you can pass as an interpolation
-  itself.
+  返回一个插值数组，它是一个被压缩的数据结构，你可以把它本身作为插值。
 
   \`\`\`jsx
   import styled, { css } from 'styled-components';
@@ -36,13 +36,12 @@ const CSS = () => md`
   \`;
 
   const StyledComp = styled.div\`
-    /* This is an example of a nested interpolation */
+    /* 这是一个嵌套插值的例子 */
     \${props => props.complex ? complexMixin : 'color: blue;'}
   \`;
   \`\`\`
 
-  If you leave off the css your function will be \`toString()\`ed and you'll not get the results
-  you expected.
+  如果你离开 \`css\`，你的函数将是 \`toString()\` 的，你将得不到你所期望的结果。
 `
 
 export default CSS

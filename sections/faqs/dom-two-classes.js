@@ -1,14 +1,17 @@
 import md from 'components/md'
 
 const TwoDomClasses = () => md`
-  ## Why do my DOM nodes have two classes?
+  ## DOM 节点为什么有两个 class?
 
-  Each node actually has two classes connected to it;
+  每个节点实际上都有两个连接到它的类;
 
-  One is static per component, meaning each element of a styled component has this class. It hasn't any style attached to it. Instead, it's used to quickly identify which styled component a DOM objects belongs to or to make minor changes in the DevTools.
+  一个是静态的纯组件，这意味着一个样式化组件的每个元素都有这个类。
+  这个类没有任何样式附在它上面。相反，它用于快速识别 DOM 对象属于哪个样式化组件，或者在 DevTools 中进行较小的更改。
 
-  The other is dynamic, meaning it will be different for every element of your styled component with different props, based on what the interpolations result in.
+  另一个是动态的，也就是说，根据插值结果，对于使用不同属性的样式化组件的每个元素它是不一样的。
 
-  For example, the styled component \`<Button />\` would render with the same static class every time. If the styles are changed using interpolations, like \`<Button secondary />\`, then the dynamic class will be a different one, while the static class would remain the same.
+  例如，样式化组件 \`<Button />\` 每一次都将渲染相同的静态类。
+  如果使用插值的方式改变了样式，如 \`<Button secondary />\`，
+  那么动态类将会是不同的，而静态类将保持不变。
 `
 export default TwoDomClasses

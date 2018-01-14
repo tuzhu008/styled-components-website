@@ -1,11 +1,11 @@
 import md from 'components/md'
 
 const BrowserSupport = () => md`
-  ## Which browsers are supported?
+  ## 哪些浏览器支持?
 
-  All [browsers that React supports](https://reactjs.org/docs/react-dom.html#browser-support) are supported.
+  所有 [React 支持的浏览器](https://reactjs.org/docs/react-dom.html#browser-support) 都支持。
 
-  This means all major browsers including Internet Explorer 9.
+  这意味着所有主要的浏览器，包括Internet Explorer 9。
 `
 
 export default BrowserSupport

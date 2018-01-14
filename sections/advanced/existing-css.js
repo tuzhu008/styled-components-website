@@ -1,47 +1,44 @@
 import md from 'components/md'
 
 const ExistingCSS = () => md`
-  ## Existing CSS
+  ## 现有 CSS
 
-  There are a couple of implementation details that you should be aware of, if you choose to use
-  styled-components together with existing CSS.
+  如果您选择将样式化组件与现有的 CSS 一起使用，您应该了解一些实现细节。
 
-  styled-components generates an actual stylesheet with classes, and attaches those classes to
-  the DOM nodes of styled components via the \`className\` prop.
-  It injects the generated stylesheet at the end of the head of the document during runtime.
+  样式化组件生成一个带有类的实际样式表，并通过 \`className\` 属性将这些类附加到样式化组件的 DOM 节点上。
+  它在运行时将生成的样式表注入到文档头部的末尾。
 
-  ### Styling normal React components
+  ### 样式化正常的 React 组件
 
-  If you use the \`styled(MyComponent)\` notation and \`MyComponent\` does not
-  render the passed-in \`className\` prop, then no styles will be applied.
-  To avoid this issue, make sure your component attaches the passed-in className to a DOM node:
+  如果使用 \`styled(MyComponent)\` ， \`MyComponent\` 不会渲染传入的 \`className\` 属性，那么没有样式被应用。
+  要避免这个问题，请确保已将传入的 className 附加到了 DOM 节点：
 
   \`\`\`jsx
   class MyComponent extends React.Component {
     render() {
-      // Attach the passed-in className to the DOM node
+      // 将传入的 className 附加到 DOM 节点
       return <div className={this.props.className} />;
     }
   }
   \`\`\`
 
-  If you have pre-existing styles with a class, you can combine the global class with the
-  passed-in one:
+  如果你有带有一个类的已存在的样式，您可以将全局类与传入的类结合起来:
 
   \`\`\`jsx
   class MyComponent extends React.Component {
     render() {
-      // Attach the passed-in className to the DOM node
+      // 将传入的 className 附加到 DOM 节点
       return <div className={\`some-global-class \${this.props.className}\`} />;
     }
   }
   \`\`\`
 
-  ### Issues with Specificity
+  ### 特殊性问题
 
-  If you apply a global class together with a styled component class, the result might not be
-  what you're expecting. If a property is defined in both classes with the same specificty,
-  the last one will win.
+  如果您将一个全局类与一个样式化组件类一起应用，那么结果可能不是您所期望的。
+  如果一个属性在两个类中都有相同的特殊性，那么最后一个将会胜出。
+
+  > 『译者注』：特殊性，也就是权重。
 
   \`\`\`jsx
   // MyComponent.js
@@ -52,18 +49,16 @@ const ExistingCSS = () => md`
     background-color: red;
   }
 
-  // For some reason this component still has a green background,
-  // even though you're trying to override it with the "red-bg" class!
+  // 出于某种原因，这个组件仍然具有绿色背景
+  // 即使你尝试使用 "red-bg" 类来重写它。
   <MyComponent className="red-bg" />
   \`\`\`
 
-  In the above example the styled component class takes precendence over the global class, since
-  styled-components injects its styles during runtime into the DOM at the end of the head.
-  Thus its styles win over the other ones.
+  在上面的例子中，样式化组件类优先级高于全局类，因为样式化组件在运行时将它的样式添加到 \`\<head\>\` 的末尾来注入到 DOM 中。
+  因此，它的样式胜过其他的。
 
-  Since it's often hard to control where your global CSS is injected into the DOM with tools like
-  Webpack, the easiest thing is to bump up the specificity of your global class by repeating the
-  classname:
+  由于使用 Webpack 等工具来控制全局 CSS 注入到 DOM 的位置通常很困难，因此最简单的方法是通过重复类名来提高全局类的特殊性：
+
 
   \`\`\`css
   /* my-component.css */

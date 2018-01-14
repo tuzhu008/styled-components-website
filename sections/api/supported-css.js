@@ -1,38 +1,40 @@
 import md from 'components/md'
 
 const SupportedCSS = () => md`
-  ## Supported CSS
+  ## 支持的 CSS
 
-  Within a styled component, we support all of CSS plus nesting. Since we generate an
-  actual stylesheet and not inline styles, whatever works in CSS works in styled-components!
+
+  在一个样式化组件中，我们支持所有 CSS 和嵌套。
+  因为我们生成了一个实际的样式表，而不是内联样式，
+  任何在 CSS 中工作的东西都可以在样式化组件中工作！
 
   \`\`\`react
   const Example = styled.div\`
-    /* all declarations will be prefixed */
+    /* 所有的声明都将被加上前缀 */
     padding: 2em 1em;
     background: papayawhip;
 
-    /* pseudo selectors work as well */
+    /* 伪选择器也可以工作 */
     &:hover {
       background: palevioletred;
     }
 
-    /* media queries are no problem */
+    /* 媒体查询也没问题 */
     @media (max-width: 600px) {
       background: tomato;
 
-      /* nested rules work as expected */
+      /* 嵌套规则按预期工作 */
       &:hover {
         background: yellow;
       }
     }
 
     > p {
-      /* descendant-selectors work as well, but are more of an escape hatch */
+      /* 后代选择器也可以工作，但更像是一个逃生舱口（escape hatch） */
       text-decoration: underline;
     }
 
-    /* Contextual selectors work as well */
+    /* 上下文选择器也可以工作 */
     html.test & {
       display: none;
     }
@@ -45,8 +47,7 @@ const SupportedCSS = () => md`
   );
   \`\`\`
 
-  Ampersands (\`&\`) get replaced by our generated, unique classname for that styled
-  component, making it easy to have complex logic.
+  与符号 (\`&\`) 被替换为为样式化组件生成的唯一的 classname，这使复杂的逻辑变得容易。
 `
 
 export default SupportedCSS

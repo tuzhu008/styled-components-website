@@ -1,36 +1,35 @@
 import md from 'components/md'
 
 const Theming = () => md`
-  ## Theming
+  ## 主题
 
-  styled-components has full theming support by exporting a \`<ThemeProvider>\` wrapper component.
-  This component provides a theme to all React components underneath itself via the context API. In the render
-  tree all styled-components will have access to the provided theme, even when they are multiple levels deep.
+  styled-components 通过暴露一个 \`<ThemeProvider>\` 包装器组件来支持完全的主题。
+  这个组件在底层通过上下文 API 提供了一个主题给所有 React 组件。
+  在渲染树种的所有样式化组件都可以访问提供的主题，即使他们是多级深度。
 
-  To illustrate this, let's create our Button component, but this time we'll pass some variables down
-  as a theme.
+  为了说明这个，我们来创建一个 Button 组件，但这次我们将把一些变量传递到主题。
 
   \`\`\`react
-  // Define our button, but with the use of props.theme this time
+  // 定义组件，但这次我们使用 props.theme
   const Button = styled.button\`
     font-size: 1em;
     margin: 1em;
     padding: 0.25em 1em;
     border-radius: 3px;
 
-    /* Color the border and text with theme.main */
+    /* 使用 theme.main 来给边框和文本上色 */
     color: \${props => props.theme.main};
     border: 2px solid \${props => props.theme.main};
   \`;
 
-  // We're passing a default theme for Buttons that aren't wrapped in the ThemeProvider
+  // 我们传递一个默认的主题给 Buttons 组件，不会被包裹在 ThemeProvider 中。
   Button.defaultProps = {
     theme: {
       main: 'palevioletred'
     }
   }
 
-  // Define what props.theme will look like
+  // 定义的 props.theme 看起来像
   const theme = {
     main: 'mediumseagreen'
   };
@@ -46,16 +45,16 @@ const Theming = () => md`
   );
   \`\`\`
 
-  ### Function themes
+  ### 函数主题
 
-  You can also pass a function for the theme prop. This function will receive the parent theme, that is from
-  another \`<ThemeProvider>\` higher up the tree. This way themes themselves can be made contextual.
+  你可以为 \`theme\` 传递一个函数。这个函数将接受父主题（渲染树种其他更高的 \`<ThemeProvider>\` ）。
+  这种方式中，主题本身可以被语境化（contextual）。
 
-  This example renders our above themed Button and a second one that uses a second ThemeProvider to invert the
-  background and foreground colours. The function \`invertTheme\` receives the upper theme and creates a new one.
+  下面的这个例子渲染了上面主体化的 Button，还另外渲染了一个，并使用 \`ThemeProvider\` 来反转了背景和前景颜色。
+  \`invertTheme\` 函数接收上面的主题并创建一个新主题。
 
   \`\`\`react
-  // Define our button, but with the use of props.theme this time
+  // 定义组件，但这次我们使用 props.theme
   const Button = styled.button\`
     color: \${props => props.theme.fg};
     border: 2px solid \${props => props.theme.fg};
@@ -67,13 +66,13 @@ const Theming = () => md`
     border-radius: 3px;
   \`;
 
-  // Define our \`fg\` and \`bg\` on the theme
+  // 在 theme 上定义 \`fg\` and \`bg\`
   const theme = {
     fg: 'palevioletred',
     bg: 'white'
   };
 
-  // This theme swaps \`fg\` and \`bg\`
+  // 这个主题互换 \`fg\` 和 \`bg\`
   const invertTheme = ({ fg, bg }) => ({
     fg: bg,
     bg: fg
@@ -92,10 +91,9 @@ const Theming = () => md`
   );
   \`\`\`
 
-  ### Getting the theme without styled components
+  ### 未样式化的组件获取主题
 
-  If you ever need to use the current theme outside styled components (e.g. inside big components), you can use
-  the \`withTheme\` higher order component.
+  如果你需要在样式化组件之外使用当前主题（比如 在 big 组件中），你可以使用 \`withTheme\` 高阶组件。
 
   \`\`\`jsx
   import { withTheme } from 'styled-components'
@@ -110,26 +108,26 @@ const Theming = () => md`
   export default withTheme(MyComponent)
   \`\`\`
 
-  ### The \`theme\` prop
+  ###  \`theme\` 属性
 
-  A theme can also be passed down to a component using the \`theme\` prop.
+  使用 \`theme\` 属性可以将主题向下传递给组件。
 
-  This is useful to circumvent a missing \`ThemeProvider\` or to override it.
+  这对于绕过缺失 \`ThemeProvider\` 或重写它很有用。
 
   \`\`\`react
-  // Define our button
+  // 定义 button
   const Button = styled.button\`
     font-size: 1em;
     margin: 1em;
     padding: 0.25em 1em;
     border-radius: 3px;
 
-    /* Color the border and text with theme.main */
+    /* 使用 theme.main 给边框和文本增加颜色 */
     color: \${props => props.theme.main};
     border: 2px solid \${props => props.theme.main};
   \`;
 
-  // Define what main theme will look like
+  // 定义的 main 主题将像这样：
   const theme = {
     main: 'mediumseagreen'
   };
@@ -142,12 +140,11 @@ const Theming = () => md`
           <Button>Themed</Button>
           <Button theme={{ main: 'darkorange' }}>Overidden</Button>
         </div>
-      </ThemeProvider>      
+      </ThemeProvider>
     </div>
   );
   \`\`\`
 
-  
 `
 
 export default Theming

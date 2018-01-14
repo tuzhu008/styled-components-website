@@ -1,15 +1,14 @@
 import md from 'components/md'
 
 const PassedProps = () => md`
-  ## Passed props
+  ## 传递属性
 
-  styled-components pass on all their props.
+  styled-components 传递所有的属性。
 
-  This example shows how all props of the Input component are passed on to the
-  DOM node that is mounted, as with React elements.
+  这个例子展示了如何把 Input 组件的所有 props 传递到挂载的 DOM 节点，就像 React 元素一样。
 
   \`\`\`react
-  // Create an Input component that'll render an <input> tag with some styles
+  // 创建一个 Input 组件，它将使用一些样式渲染一个 <input> 标签
   const Input = styled.input\`
     padding: 0.5em;
     margin: 0.5em;
@@ -19,7 +18,7 @@ const PassedProps = () => md`
     border-radius: 3px;
   \`;
 
-  // Render a styled text input with a placeholder of "@mxstbr", and one with a value of "@geelen"
+  // 渲染两个样式化的文本输入框，一个 placeholder = "@mxstbr"，一个 value = "@geelen"
   render(
     <div>
       <Input placeholder="@mxstbr" type="text" />

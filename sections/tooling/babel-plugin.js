@@ -1,39 +1,39 @@
 import md from 'components/md'
 
 const BabelPlugin = () => md`
-  ## Babel Plugin | v2
+  ## Babel 插件 | v2
 
-  This plugin adds support for server-side rendering, for minification of
-  styles and gives you a nicer debugging experience.
+  这个插件增加了对服务器端渲染的支持，为样式的压缩提供了一个更好的调试体验。
 
-  ### Usage
+  ### 用法
 
-  Install the babel-plugin first:
+  首先，安装它:
 
   \`\`\`
   npm install --save-dev babel-plugin-styled-components
   \`\`\`
 
-  Then add it to your babel configuration like so:
+  然后，添加它到 babel 配置：
 
-  > ⚠️ The plugin call order in your \`\`\`.babelrc\`\`\` file matters. If you're using the env property in your babel configuration, then putting this plugin into the plugins array won't suffice. Instead it needs to be put into each env's plugins array to maintain it being executed first. See [this](https://github.com/styled-components/babel-plugin-styled-components/issues/78) for more information.
-  
+  > ⚠️ \`\`\`.babelrc\`\`\` 文件中的插件调用顺序很重要。
+  > 如果你在你的 babel 配置中使用 env 属性，那么把这个插件放到到 plugins 数组是不够的。
+  > 相反，它需要放在每个 env 的 plugins 数组中，以保持它第一个被执行。
+  > 查看 [this](https://github.com/styled-components/babel-plugin-styled-components/issues/78) 获得更多信息。
   \`\`\`js
   {
     "plugins": ["babel-plugin-styled-components"]
   }
   \`\`\`
 
-  ### Server-side rendering
+  ### 服务端渲染
 
-  > This option is turned off by default
+  > 默认情况下，这个选项是关闭的
 
-  By adding a unique identifier to every styled component this plugin
-  avoids checksum mismatches due to different class generation on the
-  client and on the server. If you do not use this plugin and try to
-  server-side render styled-components React will complain.
+  通过为每个样式化组件添加一个唯一的标识符，
+  这个插件可以避免由于客户端和服务器上不同的类生成而导致的校验和不匹配。
+  如果你不使用这个插件，并尝试服务器端渲染样式化组件 React 会抱怨。
 
-  You can enable it with the \`ssr\` option:
+  可以使用 \`ssr\` 选项启用它：
 
   \`\`\`js
   {
@@ -45,25 +45,20 @@ const BabelPlugin = () => md`
   }
   \`\`\`
 
-  ### Better debugging
+  ### 更好的调试
 
-  This options adds the components' name and displayName to the class name
-  attached to the DOM node. In your browser's DevTools you'll see:
+  此选项将组件的名称和 displayName 添加到附加到 DOM 节点的类名称。
+  在浏览器的 DevTools 中，您将看到：
   \`<button class="Button-asdf123 asdf123" />\`
-  instead of just \`<button class="asdf123" />\`.
+  而不仅仅是 \`<button class="asdf123" />\`。
 
-  This also adds support for showing your components' real name in the
-  React DevTools. Consider writing a styled component that renders a
-  \`button\` element, called \`MyButton\`. It will
-  normally show up as \`<styled.button>\` for all of your
-  components, but with this plugin they show
-  \`<MyButton />\`.
+  这也增加了在 React DevTools 中显示组件真实名称的支持。
+  考虑编写一个渲染 \`button\` 元素的样式化组件，被称为 \`MyButton\`。
+  它通常会显示为所有组件的 \`<styled.button>\`，但是通过这个插件，它们显示为 \`<MyButton />\`。
 
-  This makes it easier to find your components and to figure out where
-  they live in your app.
+  这样可以更轻松地找到您的组件并找出它们在您的应用中的位置。
 
-  If you don't need this feature, you can disable it with the
-  \`displayName\` option:
+  如果您不需要此功能，可以使用 \`displayName\` 选项禁用它：
 
   \`\`\`
   {
@@ -75,20 +70,18 @@ const BabelPlugin = () => md`
   }
   \`\`\`
 
-  ### Preprocessing
+  ### 预处理
 
-  > This is experimental and we don't yet know of all limitations and bugs!
-  > Consider this non-production ready for now. ⚠️
+  > 这是实验性的我们还不知道所有的限制和缺陷!
+  > 现在考虑这个非生产准备. ⚠️
 
-  This plugin preprocesses your styles with stylis and uses the
-  \`no-parser.js\` entrypoint on styled-components.
-  This effectively removes stylis from your runtime bundle and should
-  slightly improve runtime performance and shrink your bundle size.
+  这个插件用 stylis 预处理你的样式，并在样式化组件上使用 \`no-parser.js\` 入口点。
+  这有效地消除了运行时捆绑包中的 stylis，并应该稍微提高运行时性能和缩小捆绑包的大小。
 
-  It automatically disables the \`minify\` option, since stylis
-  already does some minification on your CSS.
+  它会自动禁用 \`minify\` 选项，因为 stylis 已经在 CSS上 做了一些压缩。
 
-  You can enable preprocessing with the \`preprocess\` option:
+  您可以使用 \`preprocess\` 选项启用预处理：
+
 
   \`\`\`js
   {
@@ -100,19 +93,16 @@ const BabelPlugin = () => md`
   }
   \`\`\`
 
-  ### Minification
+  ### 压缩
 
-  > This option is turned on by default. If you experience mangled CSS
-  > results, turn it off and open an issue please.
+  > 默认情况下，这个选项是打开的。
+  > 如果您遇到了顺坏的 CSS 结果，请关闭它并打开一个问题。
 
-  This plugin minifies your styles in the tagged template literals, giving
-  you big bundle size savings.
+  这个插件将您的样式缩小到标记的模板字符串中，有效减少包大小。
 
-  This operation may potentially break your styles in some rare cases, so
-  we recommend to keep this option enabled in development if it's enabled
-  in the production build.
+  在极少数情况下，此操作可能会破坏您的样式，因此，如果在生产构建中启用了此选项，我们建议在开发中保持此选项。
 
-  You can disable minification with the \`minify\` option:
+  您可以使用 \`minify\` 选项禁用压缩：
 
   \`\`\`js
   {
@@ -124,17 +114,16 @@ const BabelPlugin = () => md`
   }
   \`\`\`
 
-  ### Template String Transpilation
+  ### 模板字符串转换
 
-  We transpile \`styled-components\` tagged template literals down to a
-  smaller representation than what Babel normally does,
-  because \`styled-components\` template literals don't need to
-  be 100% spec compliant.
 
-  Read more about [Tagged Template Literals](#tagged-template-literals) in
-  our dedicated section explaining them.
+  我们将 \`styled-components\` 标签模板字符串转换成比 Babel 通常所做的更小的表示，
+  因为 \`styled-components\` 模板字符串不需要100％符合规范。
 
-  You can use the \`transpileTemplateLiterals\` option to turn this feature off.
+  阅读更多关于[标签模板字符串](#tagged-template-literals)部分的解释。
+
+  您可以使用 \`transpileTemplateLiterals\` 选项关闭此特性。
+
 
   \`\`\`js
   {

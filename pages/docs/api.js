@@ -9,14 +9,14 @@ import Flow from '../../sections/api/flow'
 import TypeScript from '../../sections/api/typescript'
 
 const APIReference = () => (
-  <DocsLayout title="API Reference" description="API Reference of styled-components">
+  <DocsLayout title="API 参考" description="API Reference of styled-components">
     <Primary />
     <Helpers />
     <SupportedCSS />
     <Flow />
     <TypeScript />
 
-    <NextPage href="/docs/tooling" title="Tooling" />
+    <NextPage href="/docs/tooling" title="工具" />
   </DocsLayout>
 )
 

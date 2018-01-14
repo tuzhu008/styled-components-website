@@ -1,18 +1,16 @@
 import md from "components/md"
 
 const ComponentsAsSelectors = () => md`
-  ## Referring to other components
+  ## 引用其他组件
 
-  There are many ways to apply contextual overrides to a component's styling. That being said,
-  it rarely is easy without rigging up a well-known targeting CSS selector paradigm
-  and then making them accessible for use in interpolations.
+  将上下文覆盖应用到组件的样式有很多种方法。
+  话虽如此，但如果不使用众所周知的目标 CSS 选择器范型，并使其在插值中使用，那就很难了。
 
-  styled-components solves this use case cleanly via the "component selector" pattern. Whenever
-  a component is created or wrapped by the styled() factory function, it is also assigned a
-  stable CSS class for use in targeting. This allows for extremely powerful composition patterns
-  without having to fuss around with naming and avoiding selector collisions.
+  样式化组件通过“组件选择器”模式清晰地解决了这个使用案例。每当一个组件被 \`styled()\` 工厂函数创建或封装时，
+  它也被分配一个稳定的 CSS 类用于定位。这允许非常强大的组合模式，而不必为命名和避免选择器冲突而烦恼。
 
-  A practical example: here, our Icon component defines its response to the parent Link being hovered:
+  一个实际的例子：在这里，我们的 Icon 组件定义了它对父 Link 悬停的响应：
+
 
   \`\`\`react
   const Link = styled.a\`
@@ -54,14 +52,13 @@ const ComponentsAsSelectors = () => md`
   );
   \`\`\`
 
-  We could have nested the color-changing rule within our Link component, but then we'd have to
-  consider both sets of rules to understand why Icon behaves as it does.
 
-  ### Caveat
+  我们可以在 Link 组件中嵌套颜色变化规则，但是我们必须考虑这两套规则，以理解为什么图标的行为是这样的。
 
-  This behaviour is only supported within the context of *Styled* Components:
-  attempting to mount \`B\` in the following example will fail because component
-  \`A\` is an instance of React.Component not a Styled Component.
+  ### 警告
+
+  这个行为仅在*样式化*组件的上下文受支持：
+  尝试在下面的例子中安装 \`B\` 会失败，因为组件 \`A\` 是一个  React.Component 的实例而不是一个样式化组件。
 
   \`\`\`jsx
   class A extends React.Component {
@@ -76,11 +73,9 @@ const ComponentsAsSelectors = () => md`
   \`;
   \`\`\`
 
-  The error thrown - \`Cannot call a class as a function\` - occurs because the
-  styled component is attempting to call the component as an interpolation function.
+  抛出的错误——\`Cannot call a class as a function\`——发生这个是因为样式化组件试图将这个组件作为插值函数调用。
 
-  However, wrapping \`A\` in a styled() factory makes it eligible for interpolation -- just
-  make sure the wrapped component passes along \`className\`.
+  然而，将 \`A\` 封装在一个 styled() 工厂中，使它符合插值的条件--只需要确保封装好的组件传递了 \`className\`。
 
   \`\`\`jsx
   class A extends React.Component {

@@ -8,10 +8,11 @@ import OverrideStyles from '../../sections/faqs/override-styles-with-higher-spec
 import OverrideInlineStyles from '../../sections/faqs/override-inline-styles'
 import TwoDomClasses from '../../sections/faqs/dom-two-classes'
 import WhenToUseAttrs from '../../sections/faqs/when-to-use-attrs'
+import ReferOtherComponents from  '../../sections/faqs/reverse-selectors'
 import BrowserSupport from '../../sections/faqs/browser-support'
 
 const FAQs = () => (
-  <DocsLayout title="FAQs" description="Commonly asked questions about styled-components">
+  <DocsLayout title="常见问题" description="Commonly asked questions about styled-components">
     <Nesting />
     <ExtendAndStyled />
     <CSSFrameworks />
@@ -19,6 +20,7 @@ const FAQs = () => (
     <OverrideInlineStyles />
     <TwoDomClasses />
     <WhenToUseAttrs />
+    <ReferOtherComponents />
     <BrowserSupport />
   </DocsLayout>
 )

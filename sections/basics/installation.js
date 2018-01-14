@@ -1,9 +1,9 @@
 import md from 'components/md'
 
 const Installation = () => md`
-  ## Installation
+  ## 安装
 
-  Install styled-components from npm:
+  从 npm 安装 styled-components :
 
   \`\`\`
   npm install --save styled-components

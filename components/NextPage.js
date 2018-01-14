@@ -51,7 +51,7 @@ const Icon = styled(ChevronRightIcon).attrs({
 const NextPage = ({ title, href }) => (
   <Wrapper unstyled prefetch href={href}>
     <div>
-      <Text>Continue on the next page</Text>
+      <Text>继续下一页</Text>
       <PageName>{title}</PageName>
     </div>
 

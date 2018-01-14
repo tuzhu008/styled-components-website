@@ -15,13 +15,13 @@ const Ecosystem = ({ readme, sidebarPages }) => (
     description="Ecosystem of styled-components"
   >
     <p>
-      This is an incomplete list of awesome things built with styled-components. If you have something to share, please add it to the <Link href="https://github.com/styled-components/awesome-styled-components" inline>awesome-styled-components</Link> repo on GitHub and it will automatically show up here!
+      这是一个不完整的清单，列出了使用 styled-components 构建的了不起的东西。如果你有好东西需要分享，请添加到 GitHub <Link href="https://github.com/styled-components/awesome-styled-components" inline>awesome-styled-components</Link> 仓库，它将自动出现这里!
     </p>
     {typeof readme !== 'string' ? <Loading /> : md(
         `
         ${readme}
 
-### Contribute
+### 贡献
 
 If you know any projects build with styled components contributions and suggestions are always welcome !
 Please read the [contribution guidelines](https://github.com/styled-components/awesome-styled-components/blob/master/contributing.md) first and submit a PR.

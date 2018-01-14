@@ -12,7 +12,7 @@ import ServerSideRendering from '../../sections/advanced/server-side-rendering'
 import ComponentsAsSelectors from '../../sections/advanced/components-as-selectors'
 
 const Advanced = () =>
-  <DocsLayout title="Advanced" description="Advanced usage of styled-components - Theming, refs, Security, Existing CSS, Media Templates, Tagged Template Literals, SSR">
+  <DocsLayout title="高级" description="Advanced usage of styled-components - Theming, refs, Security, Existing CSS, Media Templates, Tagged Template Literals, SSR">
     <Theming />
     <Refs />
     <Security />
@@ -22,7 +22,7 @@ const Advanced = () =>
     <ServerSideRendering />
     <ComponentsAsSelectors />
 
-    <NextPage href="/docs/api" title="API Reference" />
+    <NextPage href="/docs/api" title="API 参考" />
   </DocsLayout>
 
 export default Advanced

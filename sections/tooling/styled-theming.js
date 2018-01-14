@@ -89,24 +89,24 @@ class StyledThemingExample extends React.Component {
 }
 
 const StyledTheming = () => md`
-  ## Styled Theming
+  ## styled theming
 
-  Create themes for your styled components using
-  [styled-theming](https://github.com/styled-components/styled-theming)
+  使用 [styled-theming](https://github.com/styled-components/styled-theming)
+  为你的样式化组件创建主题。
 
   ${<StyledThemingExample/>}
 
-  Read the [introductory blog post](http://thejameskyle.com/styled-theming.html)
+  阅读[介绍性的博客](http://thejameskyle.com/styled-theming.html)。
 
-  ### Install
+  ### 安装
 
-  Install the babel-plugin first:
+  首先安装这个 babel 插件：
 
   \`\`\`
   npm install --save styled-theming
   \`\`\`
 
-  ### Example
+  ### 示例
 
   \`\`\`jsx
   import React from 'react';
@@ -137,24 +137,22 @@ const StyledTheming = () => md`
 
   #### \`<ThemeProvider>\`
 
-  See [styled-components docs](https://www.styled-components.com/docs/advanced#theming)
+  查看 [样式化组件文档](/docs/advanced#主题)
 
-  \`<ThemeProvider>\` is part of styled-components, but is required for
-  styled-theming.
+  \`<ThemeProvider>\` 是 styled-components 的一部分，但对于 styled-theming 来说这是必须的。
 
   \`\`\`js
   import {ThemeProvider} from 'styled-components';
   \`\`\`
 
-  \`<ThemeProvider>\` accepts a single prop \`theme\` which you should pass an
-  object with either strings or getter functions. For example:
+  \`<ThemeProvider>\` 接受一个单一的属性 \`theme\` ，你应该用字符串或 getter 函数传递一个对象。例如：
 
   \`\`\`jsx
   <ThemeProvider theme={{ mode: 'dark', size: 'large' }}>
   <ThemeProvider theme={{ mode: modes => modes.dark, size: sizes => sizes.large }}>
   \`\`\`
 
-  You should generally set up a \`<ThemeProvider>\` at the root of your app:
+  你应该在你的应用程序的根目录上设置一个 \`<ThemeProvider>\`:
 
   \`\`\`jsx
   function App() {
@@ -168,9 +166,9 @@ const StyledTheming = () => md`
 
   #### \`theme(name, values)\`
 
-  Most of your theming will be done with this function.
+  大多数的主题都是用这个函数完成的。
 
-  \`name\` should match one of the keys in your \`<ThemeProvider>\` theme.
+  \`name\` 应该与 \`<ThemeProvider>\` 主题对象中的一个键匹配。
 
   \`\`\`jsx
   <ThemeProvider theme={{ whatever: '...' }}/>
@@ -180,8 +178,7 @@ const StyledTheming = () => md`
   theme('whatever', {...});
   \`\`\`
 
-  \`values\` should be an object where one of the keys will be selected by the
-  value provided to \`<ThemeProvider>\` theme.
+  \`values\` 应该是一个对象，其中一个键将由提供给 \`<ThemeProvider>\` 主题对象的值选择。
 
   \`\`\`jsx
   <ThemeProvider theme={{ mode: 'light' }}/>
@@ -193,7 +190,7 @@ const StyledTheming = () => md`
   });
   \`\`\`
 
-  The values of this object can be any CSS value.
+  这个对象的值可以是任何 CSS 值。
 
   \`\`\`jsx
   theme('mode', {
@@ -208,7 +205,8 @@ const StyledTheming = () => md`
   });
   \`\`\`
 
-  These values can also be functions that return CSS values.
+  这些值也可以是返回 CSS 值的函数。
+
 
   \`\`\`jsx
   theme('mode', {
@@ -217,8 +215,7 @@ const StyledTheming = () => md`
   });
   \`\`\`
 
-  \`theme\` will create a function that you can use as a value in
-  styled-component's \`styled\` function.
+  \`theme\` 将创建一个函数，您可以将它作为一个值在样式化组件的  \`styled\`  函数中使用。
 
   \`\`\`jsx
   import styled from 'styled-components';
@@ -237,11 +234,9 @@ const StyledTheming = () => md`
 
   #### \`theme.variants(name, prop, themes)\`
 
-  It's often useful to create variants of the same component that are selected
-  via an additional prop.
+  这个函数对于创建相同组件的变体是很有用的，通过额外的属性来选择。
 
-  To make this easier with theming, styled-theming provides a
-  \`theme.variants\` function.
+  为了使主题更简单， styled-theming 提供了一个 \`theme.variants\` 函数。
 
   \`\`\`jsx
   import styled from 'styled-components';

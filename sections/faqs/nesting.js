@@ -1,12 +1,12 @@
 import md from 'components/md'
 
 const Nesting = () => md`
-  ## Can I nest rules?
+  ## 可以嵌套规则吗？
 
-  Yes: nesting is a feature intentionally ported from Sass. Used sparingly it's a
-  great way to lighten your code by reducing the need to create explicit classes for every element.
+  可以: 嵌套是一个从 Sass 中有意移植的特性。
+    通过减少为每个元素创建显式类的需要，这是一个减轻代码很好的方法。
 
-  It can also be used by parent components to define contextual constraints that aren't properly a concern of the affected children:
+  它还可以由父组件使用，以定义上下文约束，而受这些约束影响的子元素的并不关注:
 
   \`\`\`react
   const EqualDivider = styled.div\`
@@ -46,8 +46,7 @@ const Nesting = () => md`
   );
   \`\`\`
 
-  It's also incredibly convenient to co-locate media queries, since we can see at a glance
-  exactly how the component will respond at any resolution.
+  同时，对媒体查询进行定位也非常方便，因为我们可以一眼看出组件在任何分辨率下的响应。
 
   \`\`\`react
   const ColorChanger = styled.section\`

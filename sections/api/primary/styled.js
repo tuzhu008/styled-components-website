@@ -7,8 +7,8 @@ import Table, { Row, Column } from 'components/Table'
 const Styled = () => md`
   ### \`styled\` | web | native
 
-  This is the default export.
-  This is a low-level factory we use to create the \`styled.tagname\` helper methods.
+  这是该库的默认导出。
+  这是一个低阶工厂函数，我们可以用来创建 \`styled.tagname\` 助手方法。
 
   ${
     <Table head={[ 'Arguments', 'Description' ]}>
@@ -17,13 +17,13 @@ const Styled = () => md`
           1. <Code>component</Code> / <Code>tagname</Code>
         </Column>
         <Column>
-          Either a valid react component or a tagname like <Code>'div'</Code>.
+          一个 React 组件或一个标签名（如 <Code>'div'</Code>）。
         </Column>
       </Row>
     </Table>
   }
 
-  Returns a function that accepts a tagged template literal and turns it into a \`Styled Component\`.
+  返回一个函数，这个函数接受一个标签模板字符串并将其变成一个 \`Styled Component\`。
 
   \`\`\`jsx
   import styled from 'styled-components';
@@ -40,27 +40,27 @@ const Styled = () => md`
   \`;
   \`\`\`
 
-  > We encourage you to not use the \`styled('tagname')\` notation directly.
-  > Instead, rely on the \`styled.tagname\` methods like \`styled.button\`.
-  > We define all valid HTML5 and SVG elements. (It's an automatic fat finger check too)
+  > 我们鼓励你不要直接使用 \`styled('tagname')\` 符号。
+  > 相反，依赖于 \`styled.tagname\` 方法，就像 \`styled.button\` 这样。
+  > 我们定义了所有可用的 HTML5 和 SVG 元素。（这也是一个自动的失误检查）
 
-  You can see this method being introduced in the [Getting started](/docs/basics#getting-started) section.
+  你可以在[入门](/docs/basics#入门)章节看到这个方法的介绍。
 
   #### .attrs
 
-  This is a chainable method that attaches some props to a styled component.
-  The first and only argument is an object that will be merged into the rest of the
-  component's props. The \`attrs\` object accepts the following values:
+  这是一个可链接的方法，将一些属性附着到一个样式化组件上。
+  第一个也是唯一的参数是一个将被合并到组件属性中的对象。
+  \`attrs\` 对象接受以下值：
+
 
   ${
-    <Table head={[ 'Values', 'Description' ]}>
+    <Table head={[ '值', '描述' ]}>
       <Row>
         <Column>
           <Code>Prop Value</Code>
         </Column>
         <Column>
-          These can be of any type, except functions. They'll stay static and will be
-          merged into the existing component props.
+          他们可以是任意类型，除了函数。它们将保持静态，并将被合并到现有的组件属性中。
         </Column>
       </Row>
 
@@ -69,14 +69,13 @@ const Styled = () => md`
           <Code>Prop Factory</Code>
         </Column>
         <Column>
-          A function that receives the props that are passed into the component and computes
-          a value, that is then going to be merged into the existing component props.
+          一个函数。这个函数接收被传递到组件的属性对象，并计算一个值，这个值将会被合并到现有的组件属性中。
         </Column>
       </Row>
     </Table>
   }
 
-  Returns another \`Styled Component\`.
+  返回另外的 \`Styled Component\`。
 
   \`\`\`jsx
   import styled from 'styled-components';
@@ -93,7 +92,7 @@ const Styled = () => md`
   \`;
   \`\`\`
 
-  Learn more about this constructor in the [Attaching Additional Props](/docs/basics#attaching-additional-props) section.
+  在[附加额外属性](/docs/basics#附加额外属性)了解更多关于这个构造函数的信息。
 `
 
 export default Styled

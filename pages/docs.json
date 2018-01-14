@@ -1,38 +1,38 @@
 {
   "pages": [
     {
-      "title": "Basics",
+      "title": "基础",
       "pathname": "basics",
       "sections": [
         {
-          "title": "Motivation"
+          "title": "动机"
         },
         {
-          "title": "Installation"
+          "title": "安装"
         },
         {
-          "title": "Alternative Installation"
+          "title": "其他安装方案"
         },
         {
-          "title": "Getting Started"
+          "title": "入门"
         },
         {
-          "title": "Passed props"
+          "title": "传递属性"
         },
         {
-          "title": "Adapting based on props"
+          "title": "动态样式"
         },
         {
-          "title": "Styling any components"
+          "title": "样式化任何组件"
         },
         {
-          "title": "Extending styles"
+          "title": "扩展样式"
         },
         {
-          "title": "Attaching additional props"
+          "title": "附加额外的属性"
         },
         {
-          "title": "Animations"
+          "title": "动画"
         },
         {
           "title": "React Native"
@@ -40,37 +40,37 @@
       ]
     },
     {
-      "title": "Advanced",
+      "title": "高级",
       "pathname": "advanced",
       "sections": [
         {
-          "title": "Theming"
+          "title": "主题"
         },
         {
           "title": "Refs"
         },
         {
-          "title": "Security"
+          "title": "安全"
         },
         {
-          "title": "Existing CSS"
+          "title": "现有 CSS"
         },
         {
-          "title": "Media Templates"
+          "title": "媒体模板"
         },
         {
-          "title": "Tagged Template Literals"
+          "title": "标签模板字符串"
         },
         {
-          "title": "Server Side Rendering"
+          "title": "服务端渲染"
         },
         {
-          "title": "Referring to other components"
+          "title": "引用其他组件"
         }
       ]
     },
     {
-      "title": "API Reference",
+      "title": "API 参考",
       "pathname": "api",
       "sections": [
         {
@@ -80,7 +80,7 @@
           "title": "Helpers"
         },
         {
-          "title": "Supported CSS"
+          "title": "支持的 CSS"
         },
         {
           "title": "Flow"
@@ -91,11 +91,11 @@
       ]
     },
     {
-      "title": "Tooling",
+      "title": "工具",
       "pathname": "tooling",
       "sections": [
         {
-          "title": "Babel Plugin"
+          "title": "Babel 插件"
         },
         {
           "title": "Test Utilities"
@@ -107,22 +107,23 @@
           "title": "Styled Theming"
         },
         {
-          "title": "Syntax Highlighting"
+          "title": "语法高亮"
         }
       ]
     },
     {
-      "title": "FAQs",
+      "title": "常见问题",
       "pathname": "faqs",
       "sections": [
-        { "title": "Can I nest rules?" },
-        { "title": "When should I use styled()?" },
-        { "title": "Can I use css frameworks?" },
-        { "title": "How can I override styles with higher specificity?" },
-        { "title": "How can I override inline styles?" },
-        { "title": "Why do my DOM nodes have two classes?" },
-        { "title": "When to use attrs?" },
-        { "title": "Which browsers are supported?" }    
+        { "title": "可以嵌套规则吗?" },
+        { "title": "何时应该使用 styled?" },
+        { "title": "可以使用 CSS 框架吗?" },
+        { "title": "如何能以更高的特异性覆盖样式?" },
+        { "title": "如何覆盖内联样式?" },
+        { "title": "DOM 节点为什么有两个 class?" },
+        { "title": "何时使用 attrs?" },
+        { "title": "可以引用其他组件吗?" },
+        { "title": "哪些浏览器支持?" }
       ]
     }
   ]

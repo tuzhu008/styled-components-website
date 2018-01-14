@@ -7,24 +7,23 @@ import Table, { Row, Column } from 'components/Table'
 const WithTheme = () => md`
   ### \`withTheme\` | web | native
 
-  This is a higher order component factory to get the current theme from a \`ThemeProvider\` and
-  pass it to your component as a \`theme\` prop.
+  这是一个高阶组件工厂，用来从 \`ThemeProvider\` 获得当前的主题，并将其作为 \`theme\` 属性传递到组件。
 
   ${
-    <Table head={[ 'Arguments', 'Description' ]}>
+    <Table head={[ '参数', '描述' ]}>
       <Row>
         <Column>
           1. <Code>Component</Code>
         </Column>
         <Column>
-          Any valid React component that can handle a <Code>theme</Code> prop.
+          任何有效的 React 组件，这个组件可以处理 <Code>theme</Code> 属性。
         </Column>
       </Row>
     </Table>
   }
 
-  Returns the passed component inside a wrapper (higher order component).
-  The passed component will receive a \`theme\` prop with the current theme object.
+  返回一个包装器（高阶组件），被传入的组件的被封装在里面。
+  被传入的组件将接收一个带有当前主题对象的 \`theme\` 属性。
 
   \`\`\`jsx
   import { withTheme } from 'styled-components'
@@ -39,9 +38,9 @@ const WithTheme = () => md`
   export default withTheme(MyComponent)
   \`\`\`
 
-  Only use this if you need to get the theme as a prop.
-  If you just need to set a valid stylesheet property, you can use normal theming for this.
-  Check out the section on [Theming](/docs/advanced#theming") to read more on how to use this.
+  如果你需要获得主题作为属性，只需要使用这个。
+  如果你只需要设置一个有效的样式表属性，你可以使用普通的主题。
+  查看[主题](/docs/advanced#主题) 小节来阅读更多关于如何使用它的信息。
 `
 
 export default WithTheme

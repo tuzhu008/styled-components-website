@@ -1,31 +1,31 @@
 import md from 'components/md'
 
 const GettingStarted = () => md`
-  ## Getting Started
+  ## 入门
 
-  styled-components utilises tagged template literals to style your components.
+  样式化组件使用标记模板字符串来对组件进行样式化。
 
-  It removes the mapping between components and styles. This means that when you're defining your styles,
-  you're actually creating a normal React component, that has your styles attached to it.
+  它删除了组件和样式之间的映射。
+  这意味着当你定义你的样式时，你实际上是在创建一个正常的 React 组件，这样将样式附加到组件上。
 
-  This example creates two simple components, a wrapper and a title, with some styles attached to it.
-  You can edit the code and get a feel for how you'd work with styled-components.
+  这个例子创建了两个简单的组件，一个包装器和一个标题，并附带了一些样式。
+  您可以编辑代码，并了解如何使用 styled-components。
 
   \`\`\`react
-  // Create a Title component that'll render an <h1> tag with some styles
+  // 创建提个 Title 组件，它将使用一些样式渲染一个 <h1> 标签
   const Title = styled.h1\`
     font-size: 1.5em;
     text-align: center;
     color: palevioletred;
   \`;
 
-  // Create a Wrapper component that'll render a <section> tag with some styles
+  // 创建一个 Wrapper 组件，它将使用一些样式渲染一个 <section> 标签
   const Wrapper = styled.section\`
     padding: 4em;
     background: papayawhip;
   \`;
 
-  // Use Title and Wrapper like any other React component – except they're styled!
+  // 像使用其他 React 组件一样使用 Title 和 Wrapper – 除了它们的样式化!
   render(
     <Wrapper>
       <Title>
@@ -35,7 +35,7 @@ const GettingStarted = () => md`
   );
   \`\`\`
 
-  > The CSS rules are automatically vendor prefixed, so you don't have to think about it.
+  > CSS 规则会被自动地添加供应商前缀，因此你不必去顾及它。
 `
 
 export default GettingStarted

@@ -76,7 +76,7 @@ const HomepageLivePreview = ({ className, ...rest }, { live: { element: Button }
       </Button>
 
       <InternalButton href="/docs" prefetch>
-        Documentation
+        文档
       </InternalButton>
     </div>
   )
@@ -248,9 +248,9 @@ class Index extends PureComponent {
               <Logo />
 
               <Title>
-                <Tagline>Visual primitives for the component age.</Tagline>
+                <Tagline>组件时代的视觉基元。</Tagline>
                 <SupportingTagline>
-                  Use the best bits of ES6 and CSS to style your apps without stress 💅
+                  使用最好的 ES6 和 CSS 来轻松样式化你的应用程序 💅
                 </SupportingTagline>
               </Title>
 
@@ -264,7 +264,7 @@ class Index extends PureComponent {
               </EditorContainer>
             </LiveProvider>
 
-            <UsersHeading>Used by folks at</UsersHeading>
+            <UsersHeading>谁在使用</UsersHeading>
 
             <UsersWrapper>
               <CompanyLogo bottom="-0.2rem" height="1.75rem">
@@ -322,6 +322,10 @@ class Index extends PureComponent {
             <FooterLink inline href="https://twitter.com/mxstbr">@mxstbr</FooterLink>
             {' & '}
             <FooterLink inline href="https://twitter.com/_philpl">@_philpl‬</FooterLink>
+            <br />
+            {'本站译自 '}
+            <FooterLink inline href="https://www.styled-components.com/">styled-components 英文</FooterLink>
+            {' 如有疑问，请访问原站！'}
           </FooterContent>
         </Footer>
       </div>

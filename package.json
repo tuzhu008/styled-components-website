@@ -12,11 +12,10 @@
     "lint:fix": "eslint . --fix",
     "lint:css": "stylelint './static/**/*.js' './pages/**/*.js' './test/**/*.js' './utils/**/*.js' './components/**/*.js' './sections/**/*.js'",
     "lint": "run-s lint:js lint:css",
-    "start": "NODE_ENV=production node server.js",
+    "start": "next start -p 8000",
     "test": "jest -c .jest.config.js",
     "preintegration": "next build",
     "integration": "jest -c .jest-integration.config.js --forceExit --silent --runInBand",
-    "precommit": "lint-staged"
   },
   "dependencies": {
     "axios": "^0.17.1",

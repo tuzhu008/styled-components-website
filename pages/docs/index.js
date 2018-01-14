@@ -44,7 +44,9 @@ const SubHeader = styled.h3`
 const Documentation = () => (
   <DocsLayout title="Documentation" description="Learn how to use styled-components and to style your apps without stress">
     <p>
-      Utilising tagged template literals (a recent addition to JavaScript) and the power of CSS, styled-components allows you to write actual CSS code to style your components. It also removes the mapping between components and styles – using components as a low-level styling construct could not be easier!
+      使用标记的模板字符串(最近添加到 JavaScript)和 CSS 的强大功能，
+      styled-components 使您可以编写实际的 CSS 代码来对组件进行样式化。
+      它还删除了组件和样式之间的映射——使用组件作为低级样式构造是不容易的！
     </p>
 
     <Row>

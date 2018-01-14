@@ -7,11 +7,10 @@ import Table, { Row, Column } from 'components/Table'
 const InjectGlobal = () => md`
   ### \`injectGlobal\` | web | native
 
-  A helper method to write global CSS. It does not return a component, but adds the styles to
-  the stylesheet directly.
+  一个助手函数，用于书写全局 CSS。它不返回一个组件，只是直接将样式添加到样式表。
 
   ${
-    <Table head={[ 'Arguments', 'Description' ]}>
+    <Table head={[ '参数', '描述' ]}>
       <Row>
         <Column>
           1. <Code>TaggedTemplateLiteral</Code>
@@ -38,9 +37,11 @@ const InjectGlobal = () => md`
   \`;
   \`\`\`
 
-  We do not encourage the use of this. Try to use it once per app at most, if you
-  must, contained in a single file. This is an escape hatch. Only use it for the
-  rare \`@font-face\` definition or body styling.
+  我们不鼓励使用这种方法。
+  如果你必须的话，尽量在每个应用程序中使用一次，
+  如果你必须的话，那就把它包含在一个单独的文件中。
+  这是一个逃生舱（escape hatch）。
+  只使用它来获得罕见的 \`@font-face\` 定义或 body 样式。
 `
 
 export default InjectGlobal

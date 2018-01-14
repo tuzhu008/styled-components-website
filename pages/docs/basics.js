@@ -15,7 +15,7 @@ import Animations from '../../sections/basics/animations'
 import ReactNative from '../../sections/basics/react-native'
 
 const Basics = () => (
-  <DocsLayout title="Basics" description="Get Started with styled-components basics.">
+  <DocsLayout title="基础" description="Get Started with styled-components basics.">
     <Motivation />
     <Installation />
     <AlternativeInstallation />
@@ -30,7 +30,7 @@ const Basics = () => (
 
     <NextPage
       href="/docs/advanced"
-      title="Advanced"
+      title="高级"
     />
   </DocsLayout>
 )

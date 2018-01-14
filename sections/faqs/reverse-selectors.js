@@ -1,13 +1,12 @@
 import md from "components/md"
 
 const ReverseSelectors = () => md`
-  ## Can I refer to other components?
+  ## 可以引用其他组件吗?
 
-  Yes! This lets you adopt the "Reverse Selector" pattern, which lets components encapsulate the entirety of their styling:
-  as with media queries, it lets components describe how they will behave when affected by external changes,
-  without needing to refer to other parts of your codebase.
+  可以! 这使您可以采用“反向选择器（Reverse Selector）”模式，
+  它允许组件封装整个样式：与媒体查询一样，它允许组件描述当受到外部更改的影响时它们将如何工作，而不需要引用基础代码的其他部分。
 
-  Here, our Icon component defines its response to its parent Link being hovered:
+  在这里，我们的 Icon 组件定义了对其父 Link 悬停的响应：
 
   \`\`\`react
   const Link = styled.a\`
@@ -49,14 +48,12 @@ const ReverseSelectors = () => md`
   );
   \`\`\`
 
-  We could have nested the color-changing rule within our Link component, but then we'd have to
-  consider both sets of rules to understand why Icon behaves as it does.
+  我们可以在 Link 组件中嵌套颜色变化规则，但是我们必须考虑这两套规则，以理解为什么图标的行为是这样的。
 
-  ### Caveat
-  
-  This behaviour is only supported within the context of *Styled* Components: 
-  attempting to mount \`B\` in the following example will fail because component 
-  \`A\` is an instance of React.Component not a Styled Component.
+  ### 警告
+
+  这个行为仅在*样式化*组件的上下文受支持：
+  尝试在下面的例子中安装 \`B\` 会失败，因为组件 \`A\` 是一个  React.Component 的实例而不是一个样式化组件。
 
   \`\`\`jsx
   class A extends React.Component {
@@ -64,15 +61,14 @@ const ReverseSelectors = () => md`
       return <div />;
     }
   }
-  
+
   const B = styled.div\`
     \${A} {
     }
   \`;
   \`\`\`
 
-  The error thrown - \`Cannot call a class as a function\` - occurs because the 
-  styled component is attempting to call the component as an interpolation function.
+  抛出的错误——\`Cannot call a class as a function\`——发生这个是因为样式化组件试图将这个组件作为插值函数调用。
 `
 
 export default ReverseSelectors

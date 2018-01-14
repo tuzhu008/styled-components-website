@@ -1,11 +1,12 @@
 import md from 'components/md'
 
 const OverrideStyles = () => md`
-  ## How can I override styles with higher specificity?
+  ## 如何能以更高的特异性覆盖样式?
 
-  The way to override styles with a high specificity is to simply increase the specificity of your own styles. This could be done using \`!important\`, but that's error prone and generally not a good idea.
+  用高的特异性来覆盖样式的方法是简单地增加您自己样式的特性。
+  这可以用 \`!important\`，但这很容易出错，而且通常不是一个好主意。
 
-  We recommend the following technique:
+  我们推荐以下方法:
 
   \`\`\`js
   const MyStyledComponent = styled(AlreadyStyledComponent)\`
@@ -15,8 +16,8 @@ const OverrideStyles = () => md`
     }
   \`;
   \`\`\`
-  
-  Each \`&\` gets replaced with the generated class, so the injected CSS then looks like this:
+
+  每个 \`&\` 都会被生成的类替换，所以注入的 CSS 看起来是这样的:
 
   \`\`\`css
   .MyStyledComponent-asdf123.MyStyledComponent-asdf123.MyStyledComponent-asdf123 {
@@ -24,8 +25,8 @@ const OverrideStyles = () => md`
     font-weight: bold;
   }
   \`\`\`
-  
-  The repeated class bumps the specificity high enough to override the source order without being very tedious to write!
+
+  重复的类会使特性达到足够的高度，以覆盖源顺序，而不需要编写任何繁琐的操作！
 `
 
 export default OverrideStyles

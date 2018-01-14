@@ -37,11 +37,11 @@ const NavLink = styled(Link).attrs({
 
 const NavLinks = () =>
   <Wrapper>
-    <NavLink href="/docs">Documentation</NavLink>
+    <NavLink href="/docs">文档</NavLink>
     <NavSeparator />
-    <NavLink href="/ecosystem">Ecosystem</NavLink>
+    <NavLink href="/ecosystem">生态</NavLink>
     <NavSeparator />
-    <NavLink href="/releases">Releases</NavLink>
+    <NavLink href="/releases">版本</NavLink>
   </Wrapper>
 
 export default NavLinks

@@ -1,17 +1,16 @@
 import md from 'components/md'
 
 const AdaptingBasedOnProps = () => md`
-  ## Adapting based on props
+  ## 动态样式
 
-  You can pass a function ("interpolations") to a styled component's template literal
-  to adapt it based on its props.
+  你可以传递函数("插值")到样式化组件的模板字符串来基于它的属性修改它。
 
-  This button component has a primary state that changes its colour.
-  When setting the <Code>primary</Code> prop to true, we are swapping out its background and text colour.
+  下面的这个按钮组件有一个 primary 状态，它会改变它的颜色。
+  当设置 \`primary\` 为 \`true\` 时，我们将其背景和文本颜色进行交换。
 
   \`\`\`react
   const Button = styled.button\`
-    /* Adapt the colours based on primary prop */
+    /* 基于 primary 属性来修改颜色 */
     background: \${props => props.primary ? 'palevioletred' : 'white'};
     color: \${props => props.primary ? 'white' : 'palevioletred'};
 

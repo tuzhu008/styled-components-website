@@ -63,5 +63,19 @@ module.exports = {
     config.resolve.alias['react-dom'] = 'preact-compat/dist/preact-compat'
 
     return config
+  },
+
+  exportPathMap: function () {
+    return {
+      '/': {page: '/'},
+      '/docs': {page: '/docs'},
+      '/docs/basics': {page: '/docs/basics'},
+      '/docs/advanced': {page: '/docs/advanced'},
+      '/docs/api': {page: '/docs/api'},
+      '/docs/tooling': {page: '/docs/tooling'},
+      '/docs/faqs': {page: '/docs/faqs'},
+      '/ecosystem': {page: '/ecosystem'},
+      '/releases': {page: '/releases'}
+    }
   }
 }

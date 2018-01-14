@@ -1,22 +1,20 @@
 import md from 'components/md'
 
 const ExtendingStyles = () => md`
-  ## Extending Styles | v2
+  ## 扩展样式 | v2
 
-  Quite frequently you might want to use a component, but change it slightly for
-  a single case. Now you could pass in an interpolated function and change them
-  based on some props, but that's quite a lot of effort for overriding the styles
-  once.
+  很多时候你可能想使用一个组件，但是对于一个单一的案例稍微改变一下。
+  现在你可以传入一个插值的函数，并根据一些 props 来改变它们，但是这样重写一次样式是相当费力的。
 
-  To do this in an easier way you can call \`extend\` on the component
-  to generate another. You style it like any other styled component.
-  It overrides duplicate styles from the initial component and keeps the others around.
+  要以更简单的方式执行此操作，可以在组件上调用 \`extend\` 来生成另一个。
+  像其他任何样式化组件一样设置它的样式
+  它覆盖了来自初始组件的重复样式，并保留其他。
 
-  Here we use the button from the last section and create a special one, extending it
-  with some colour-related styling.
+  在这里，我们使用上一节中的按钮创建一个特殊的按钮，并使用一些颜色相关的样式进行扩展。
+
 
   \`\`\`react
-  // The Button from the last section without the interpolations
+  // Button 来自上一节中不带插值的组件
   const Button = styled.button\`
     color: palevioletred;
     font-size: 1em;
@@ -26,7 +24,7 @@ const ExtendingStyles = () => md`
     border-radius: 3px;
   \`;
 
-  // We're extending Button with some extra styles
+  // 我们使用一些额外的样式来扩展 Button
   const TomatoButton = Button.extend\`
     color: tomato;
     border-color: tomato;
@@ -40,17 +38,17 @@ const ExtendingStyles = () => md`
   );
   \`\`\`
 
-  We can see that the new \`TomatoButton\` still resembles \`Button\`, while we have only
-  added two new rules.
+  我们可以看到，新的 \`TomatoButton\` 将类似于 \`Button\`，我们只增加了两条新规则。
 
-  > You should only use \`Comp.extend\` if you know that \`Comp\` is a styled component.
-  > If you're importing from another file or a third party library, prefer to use
-  > \`styled(Comp)\` as it accomplishes the same thing but works with *any* React
-  > component. Read more about [what the difference between \`Comp.extend\` and \`styled(Comp)\` is.](/docs/faqs#when-should-i-use-)
+  > 如果知道 \`Comp\` 是一个样式化组件，你应该只使用 \`Comp.extend\`。
+  > 如果你是从其他文件安或第三方库中导入的，使用 \`styled(Comp)\` 更好，
+  > 因为它可以完成相同的事情，而且可以与任何 React 组件一起工作。
+  > 阅读更多关于 [ \`Comp.extend\` 和 \`styled(Comp)\` 的区别](/docs/faqs#when-should-i-use-)。
 
-  In really rare cases you might want to change which tag or component a styled component renders.
-  For this case, we have an escape hatch. You can use the <Code>withComponent</Code> to extend
-  the styles and use a different tag altogether.
+
+  在极少数情况下，您可能需要更改样式化组件渲染的标签或组件。
+  对于这种情况，我们有一个逃生舱口(escape hatch)。
+  您可以使用 \`withComponent\` 来扩展样式并使用完全不同的标签。
 
   \`\`\`react
   const Button = styled.button\`
@@ -63,10 +61,10 @@ const ExtendingStyles = () => md`
     border-radius: 3px;
   \`;
 
-  // We're replacing the <button> tag with an <a> tag, but reuse all the same styles
+  // 我们使用 <a> 标签替换 <button> 标签，但重复使用所有相同的样式
   const Link = Button.withComponent('a')
 
-  // Use .withComponent together with .extend to both change the tag and use additional styles
+  // 同时使用 .withComponent 和 .extend 来改变标签和使用额外的样式
   const TomatoLink = Link.extend\`
     color: tomato;
     border-color: tomato;

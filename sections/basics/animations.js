@@ -1,17 +1,17 @@
 import md from 'components/md'
 
 const Animations = () => md`
-  ## Animations
+  ## 动画
 
-  CSS animations with \`@keyframes\` aren't scoped to a single component but you still don't want them
-  to be global. This is why we export a \`keyframes\` helper which will generate a unique name for your
-  keyframes. You can then use that unique name throughout your app.
 
-  This way, you get all the benefits of using JavaScript, are avoiding name clashes and get your keyframes
-  like always:
+  带有 \`@keyframes\` 的 CSS 动画没有作用于单个组件，但你仍然不希望它们是全局的。
+  这就是为什么我们导出一个 \`keyframes\` 助手，它将为您的关键帧生成一个唯一的名称。
+  然后，您可以在整个应用程序中使用该唯一名称。
+
+  这样，您就可以获得使用 JavaScript 的所有好处，避免名称冲突，并像往常一样获得关键帧：
 
   \`\`\`react
-  // keyframes returns a unique name based on a hash of the contents of the keyframes
+  // keyframes 返回一个基于关键帧内容的哈希的唯一名称
   const rotate360 = keyframes\`
     from {
       transform: rotate(0deg);
@@ -22,7 +22,7 @@ const Animations = () => md`
     }
   \`;
 
-  // Here we create a component that will rotate everything we pass in over two seconds
+  // 这里我们创建一个组件，这个组件会在2秒内旋转我们传入的每个东西
   const Rotate = styled.div\`
     display: inline-block;
     animation: \${rotate360} 2s linear infinite;

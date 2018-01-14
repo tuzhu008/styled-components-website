@@ -7,19 +7,17 @@ import Code from 'components/Code'
 const ThemeProvider = () => md`
   ### \`ThemeProvider\` | web | native
 
-  A helper component for theming. Injects the theme into all styled components anywhere
-  beneath it in the component tree, via the context API.
-  Check the section on [Theming](/docs/advanced#theming).
+  一个用于主题的辅助组件。它通过上下文 API 将主体注入到组件树下方的所有样式化组件中。
+  查看[主题](/docs/advanced#主题)章节。
 
   ${
-    <Table head={[ 'Props', 'Description' ]}>
+    <Table head={[ '属性', '描述' ]}>
       <Row>
         <Column>
           <Code>theme</Code>
         </Column>
         <Column>
-          An object that will be injected as <Code>theme</Code> into all interpolations in styled components
-          beneath the provider.
+          一个对象，这个对象将作为  <Code>theme</Code> 被注入到提供者下面的样式组件的所有插值中。
         </Column>
       </Row>
     </Table>

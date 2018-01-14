@@ -38,11 +38,9 @@ const Video = styled.div.attrs({
 `
 
 const Motivation = () => md`
-  ## Motivation
+  ## 动机
 
-  This talk by Max Stoiber is a really thorough introduction to styled-components
-  and goes through what the motivations behind its creation were, along with some
-  other information to get started with.
+  Max Stoiber 的这篇演讲是对 styled-components 的深入介绍，并分析了它的创造背后的动机，以及一些其他的信息。
 
   ${<Video />}
 `

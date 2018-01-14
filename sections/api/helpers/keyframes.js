@@ -7,22 +7,22 @@ import Table, { Row, Column } from 'components/Table'
 const Keyframes = () => md`
   ### \`keyframes\` | web
 
-  A helper method to create keyframes for animations.
+  一个助手方法，用来创建动画的关键帧。
 
   ${
-    <Table head={[ 'Arguments', 'Description' ]}>
+    <Table head={[ '参数', '描述' ]}>
       <Row>
         <Column>
           1. <Code>TaggedTemplateLiteral</Code>
         </Column>
         <Column>
-          A tagged template literal with your keyframes inside.
+          一个内部带有关键帧的标签模板字符串。
         </Column>
       </Row>
     </Table>
   }
 
-  Returns a unique name for these keyframes, to be used in your animation declarations.
+  为这些关键帧返回一个唯一的名字，被用于动画声明中。
 
   \`\`\`jsx
   import styled, { keyframes } from 'styled-components';
@@ -41,7 +41,7 @@ const Keyframes = () => md`
   \`;
   \`\`\`
 
-  You can learn more about styled-components with Animations in the [Animations](/docs/basics#animations)
+  你可以在 [动画](/docs/basics#动画) 章节了解更多关于 styled-components 动画的信息。
 `
 
 export default Keyframes

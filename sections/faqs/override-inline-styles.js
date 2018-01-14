@@ -1,11 +1,11 @@
 import md from 'components/md'
 
 const OverrideStyles = () => md`
-  ## How can I override inline styles?
+  ## 如何覆盖内联样式?
 
-  Inline styles will always take precedence over external CSS, so you cannot override it by simply increasing specificity.
-  
-  There is a neat trick however, which is to use the style \`element-attr\` CSS Selector in conjunction with \`!important\`:
+  内联样式总是优先于外部 CSS，因此您不能仅仅通过增加特异性来覆盖它。
+
+  不过，这里有一个巧妙的技巧，那就是使用 style  \`element-attr\` CSS 选择器与 \`!important\`结合：
 
   \`\`\`js
   const MyStyledComponent = styled(InlineStyledComponent)\`

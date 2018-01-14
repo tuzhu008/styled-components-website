@@ -7,24 +7,26 @@ import Table, { Row, Column } from 'components/Table'
 const IsStyledComponent = () => md`
   ### \`isStyledComponent\` | web | native
 
-  A utility to help identify styled components.
+  帮助标识样式化组件的实用程序。
 
   ${
-    <Table head={[ 'Arguments', 'Description' ]}>
+    <Table head={[ '参数', '函数' ]}>
       <Row>
         <Column>
           1. <Code>Function</Code>
         </Column>
         <Column>
-          {md`Any function expected to possibly be a styled component or React component wrapped in a styled component, via the \`styled()\` factory.`}
+          {md`
+            通过 \`styled()\` 工厂，任何函数都可能是一个样式化函数，或者封装在样式化函数种的 React 组件。
+          `}
         </Column>
       </Row>
     </Table>
   }
 
-  Returns true if the passed function is a valid styled components-wrapped component class. This is useful for determining if \`innerRef\` or \`ref\` should be passed:
+  如果传递的函数是一个有效的样式化组件——封装的组件类，则返回 true。这对于确定是否应该传递: \`innerRef\` 或 \`ref\` 是很有用的。
 
-  \`\`\`react
+  \`\`\`jsx
   import React from 'react';
   import { isStyledComponent } from 'styled-components';
   import MaybeStyledComponent from './somewhere-else';
@@ -46,7 +48,7 @@ const IsStyledComponent = () => md`
   }
   \`\`\`
 
-  It also can be useful for deterimining if a component needs to be wrapped such that it can be used as a [component selector]():
+  它还可以用于决定组件是否需要被封装，以便可以将组件用作[组件选择器](/docs/advanced#引用其他组件):
 
   \`\`\`jsx
   import React from 'react';

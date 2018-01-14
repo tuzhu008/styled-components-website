@@ -1,22 +1,20 @@
 import md from 'components/md'
 
 const StylingAnyComponents = () => md`
-  ## Styling any components
+  ## 样式化任何组件
 
-  The \`styled\` method works perfectly on all of your own or any third-party 
-  components as well, as long as they pass the \`className\` prop to their rendered sub-components,
-  which should pass it too, and so on.
-  Ultimately, the \`className\` must be passed down the line to an actual DOM node for the styling to take any effect.
+  \`styled\` 方法在所有自己或任何第三方组件上都可以正常工作，只要它们将 \`className\` 属性传递给它们所渲染的子组件，也应该传递它们，依此类推。
+   最终，\`className\` 必须传递到一个实际的 DOM 节点，样式化才能起作用。
 
-  > If you are using \`react-native\` keep in mind to use \`style\` instead of \`className\`.
+  > 如果你使用 \`react-native\`，请记住使用 \`style\` 而不是 \`className\`。
 
-  If you're using any external library, you can consider using this pattern to turn them
-  into styled components. The same pattern works for your own components as well, if you
-  need some components to stay unstyled on their own.
+  如果你使用任何外部库，你可以考虑使用下面的这个模式来转换他们到样式化组件当中。这个模式与你自己的组件一样工作良好，
+  如果你需要一些组件保持自己的样式。
 
   \`\`\`react
-  // This could be react-router's Link for example
+  // 例如，这是一个 react-router 的 Link
   const Link = ({ className, children }) => (
+    // 传递到实际的 DOM 节点
     <a className={className}>
       {children}
     </a>
@@ -36,16 +34,15 @@ const StylingAnyComponents = () => md`
   );
   \`\`\`
 
-  Consider carefully whether to wrap your own components in a styled component, when it isn't necessary.
-  You will disable the automatic whitelisting of props, and reverse the recommended order of styled
-  components and structural components.
+  如果没有必要，请仔细考虑是否将您自己的组件包装在一个样式化的组件中。
+  您将禁用属性的自动白名单，并反转样式化组件和结构组件的推荐顺序。
 
-  You can also pass tag names into the \`styled()\` factory call, like so: \`styled('div')\`.
-  In fact, the \`styled.tagname\` helpers are just aliases that do the same.
+  您还可以将标签名称传递到 \`styled()\` 工厂调用中，就像这样: \`styled('div')\`。
+  事实上，\`styled.tagname\` 辅助器只是它的别名。
 
-  > styled-components always generates a real stylesheet with classes.
-  > The classnames are then passed to the React component (including third party components)
-  > via the \`className\` prop.
+
+  > styled-components 总是生成一个带有很多类的真实的样式表。
+  > 然后通过 \`className\` 属性将类名传递给 React 组件(包括第三方组件)。
 `
 
 export default StylingAnyComponents
